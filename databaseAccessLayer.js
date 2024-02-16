@@ -2,13 +2,13 @@ const database = include('/databaseConnection');
 
 
 async function getAllUsers() {
-	let sqlRender = `
+	let sqlQuery = `
 		SELECT web_user_id, first_name, last_name, email
 		FROM web_user;
 	`;
 	
 	try {
-		const results = await database.render(sqlRender);
+		const results = await database.query(sqlQuery);
 		console.log(results[0]);
 		return results[0];
 	}

@@ -12,15 +12,16 @@ const express = require('express');
 const database = include('databaseConnection');
 const router = include('routes/router');
 
+
 const port = process.env.PORT || 3000;
 
 async function printMySQLVersion() {
-	let sqlRender = `
+	let sqlQuery = `
 		SHOW VARIABLES LIKE 'version';
 	`;
 	
 	try {
-		const results = await database.render(sqlRender);
+		const results = await database.query(sqlQuery);
 		console.log("Successfully connected to MySQL");
 		console.log(results[0]);
 		return true;
