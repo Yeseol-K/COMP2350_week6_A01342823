@@ -31,12 +31,12 @@ router.post('/addUser', async (req, res) => {
  if (success) {
 	res.redirect("/");
  } else {
- 	res.render('error', {message: "Error writing to MySQL"});
- 	console.log("Error writing to MySQL");
+ 	res.render('error', {message: "Error writing to MySQL1"});
+ 	console.log("Error writing to MySQL1");
  }}
  catch (err) {
- 	res.render('error', {message: "Error writing to MySQL"});
- 	console.log("Error writing to MySQL");
+ 	res.render('error', {message: "Error writing to MySQL2"});
+ 	console.log("Error writing to MySQL2");
  	console.log(err);
  }
  });
