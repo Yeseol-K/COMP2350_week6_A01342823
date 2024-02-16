@@ -2,8 +2,6 @@ const router = require('express').Router();
 const database = include('databaseConnection');
 const dbModel = include('databaseAccessLayer');
 // const dbModel = include('staticData');
-const {getAllUsers, addUser} = include('databaseAccessLayer');
-
 
 
 const express = require('express');
