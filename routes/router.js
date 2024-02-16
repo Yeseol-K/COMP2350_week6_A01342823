@@ -25,23 +25,21 @@ router.get('/', async (req, res) => {
 
 router.post('/addUser', async (req, res) => {
 	console.log("form submit");
-	console.log("req.body log: ", req.body);
-	try {
-	const success = await dbModel.addUser(req.body);
-	if (success) {
+	console.log(req.body);
+ try {
+ 	const success = await dbModel.addUser(req.body);
+ if (success) {
 	res.redirect("/");
-	}
-	else {
-	res.render('error', {message: "Error writing to MySQL"});
-	console.log("Error writing to MySQL");
-	}
-	}
-	catch (err) {
-	res.render('error', {message: "Error writing to MySQL"});
-	console.log("Error writing to MySQL");
-	console.log(err);
-	}
-	});
+ } else {
+ 	res.render('error', {message: "Error writing to MySQL"});
+ 	console.log("Error writing to MySQL");
+ }}
+ catch (err) {
+ 	res.render('error', {message: "Error writing to MySQL"});
+ 	console.log("Error writing to MySQL");
+ 	console.log(err);
+ }
+ });
 
 	router.get('/deleteUser', async (req, res) => {
 		console.log("delete user");
