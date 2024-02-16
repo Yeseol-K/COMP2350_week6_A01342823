@@ -15,12 +15,12 @@ const router = include('routes/router');
 const port = process.env.PORT || 3000;
 
 async function printMySQLVersion() {
-	let sqlQuery = `
+	let sqlRender = `
 		SHOW VARIABLES LIKE 'version';
 	`;
 	
 	try {
-		const results = await database.query(sqlQuery);
+		const results = await database.render(sqlRender);
 		console.log("Successfully connected to MySQL");
 		console.log(results[0]);
 		return true;
